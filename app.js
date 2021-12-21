@@ -68,13 +68,22 @@ better than array because the array doesn't give much meaning to each element
 // player.points += 10
 // console.log(player.points);
 
-function sayHello(name) {
-    console.log("Hello", name);
+function sayHello(name, age) {
+    console.log("Hello my name is", name, "and I'm", age);
 }
 
+const player = {
+    name: "Albert",
+    points: 10,
+    fat: true,
+    sayHello: function(name, age) {
+        console.log("Hello my name is", name, "and I'm", age);
+    },
+};
 
 names = ["Albert", "Nico", "EJ", "Jessie"];
-names.forEach(element => {
-    sayHello(element);
-});
+ages = [34, 30, 62, 36];
+for(let i = 1; i < names.length; i++) {
+    player.sayHello(names[i], ages[i]);
+}
 
