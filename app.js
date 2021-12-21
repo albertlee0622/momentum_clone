@@ -32,6 +32,49 @@
 // console.log(nonsense);
 
 //assignment is now allowed for const, but const array can be appended an item
-const toBuy = ["coffee"];
-toBuy.push("banana");
-console.log(toBuy);
+// const toBuy = ["coffee"];
+// toBuy.push("banana");
+// console.log(toBuy);
+
+const playerName = "albert";
+const playerPoints = 121212;
+const playerHandsome = false;
+const playerFat = "little bit";
+
+//want to do 
+/*
+player.name
+player.points
+player.handsome
+better than array because the array doesn't give much meaning to each element
+*/
+
+//defining an object
+// const player = {
+//     name: "Albert",
+//     points: 10,
+//     fat: true,
+// };
+//const object ref variable is not allowed to be assigned to point to a new obj adderss, 
+//but its element value can be modified. 
+// player.fat = false;
+// console.log(player);
+// console.log(player["name"]);
+// console.log(player.fat);
+
+// player["lastName"] = "Lee";
+// console.log(player.lastName);
+
+// player.points += 10
+// console.log(player.points);
+
+function sayHello(name) {
+    console.log("Hello", name);
+}
+
+
+names = ["Albert", "Nico", "EJ", "Jessie"];
+names.forEach(element => {
+    sayHello(element);
+});
+
