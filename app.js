@@ -68,22 +68,58 @@ better than array because the array doesn't give much meaning to each element
 // player.points += 10
 // console.log(player.points);
 
-function sayHello(name, age) {
-    console.log("Hello my name is", name, "and I'm", age);
+// function sayHello(name, age) {
+//     console.log("Hello my name is", name, "and I'm", age);
+// }
+
+// const player = {
+//     name: "Albert",
+//     points: 10,
+//     fat: true,
+//     sayHello: function(name, age) {
+//         console.log("Hello my name is", name, "and I'm", age);
+//     },
+// };
+
+// names = ["Albert", "Nico", "EJ", "Jessie"];
+// ages = [34, 30, 62, 36];
+// for(let i = 1; i < names.length; i++) {
+//     player.sayHello(names[i], ages[i]);
+// }
+
+// console.log(console);
+
+// const calculator = {
+//     add: function(a, b) {
+//         console.log(a + b);
+//     },
+//     subtract: function(a, b) {
+//         console.log(a - b);
+//     },
+//     divide: function(a, b) {
+//         console.log(a / b);
+//     },
+//     multiply: function(a, b) {
+//         console.log(a * b);
+//     },
+//     power: function(a, b) {
+//         console.log(a**b);
+//     }
+// }
+
+// const a = 10, b = 5;
+// calculator.add(a, b);
+// calculator.subtract(a, b);
+// calculator.divide(a, b);
+// calculator.multiply(a, b);
+// calculator.power(a, b);
+
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+    return ageOfForeigner + 2; 
 }
 
-const player = {
-    name: "Albert",
-    points: 10,
-    fat: true,
-    sayHello: function(name, age) {
-        console.log("Hello my name is", name, "and I'm", age);
-    },
-};
+const krAge = calculateKrAge(age);
+console.log(krAge + 2);
 
-names = ["Albert", "Nico", "EJ", "Jessie"];
-ages = [34, 30, 62, 36];
-for(let i = 1; i < names.length; i++) {
-    player.sayHello(names[i], ages[i]);
-}
 
