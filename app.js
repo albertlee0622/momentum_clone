@@ -114,12 +114,21 @@ better than array because the array doesn't give much meaning to each element
 // calculator.multiply(a, b);
 // calculator.power(a, b);
 
-const age = 96;
-function calculateKrAge(ageOfForeigner) {
-    return ageOfForeigner + 2; 
+// const age = 96;
+// function calculateKrAge(ageOfForeigner) {
+//     return ageOfForeigner + 2; 
+// }
+
+// const krAge = calculateKrAge(age);
+// console.log(krAge + 2);
+
+const age = parseInt(prompt("how old are you?"));
+
+console.log(isNaN(age));
+
+if(isNaN(age)) {
+    console.log("Please write a number");
 }
-
-const krAge = calculateKrAge(age);
-console.log(krAge + 2);
-
-
+else {
+    console.log("Thank you for writing your age");
+}
