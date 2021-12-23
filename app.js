@@ -139,7 +139,9 @@ better than array because the array doesn't give much meaning to each element
 //     console.log("Thank you for writing your age");
 // }
 //now I understnad why it is called DOM in HTML
-const title = document.getElementById("title");
-// title.autofocus = true;
-title.innerText = "Got you!";
+const title = document.querySelectorAll(".text-class h1");
 // console.log(title);
+// // title.autofocus = true;
+// // title[0].innerText= "Got you!";
+// console.log(title);
+console.log(title);
