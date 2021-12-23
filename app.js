@@ -122,13 +122,24 @@ better than array because the array doesn't give much meaning to each element
 // const krAge = calculateKrAge(age);
 // console.log(krAge + 2);
 
-const age = parseInt(prompt("how old are you?"));
+// const age = parseInt(prompt("how old are you?"));
 
-console.log(isNaN(age));
+// console.log(isNaN(age));
 
-if(isNaN(age)) {
-    console.log("Please write a number");
-}
-else {
-    console.log("Thank you for writing your age");
-}
+// if(age > 100) {
+//     console.log("You are wise!");
+// }
+// else if (age > 80) {
+//     console.log("You are getting old...");
+// }
+// else if (age > 50) {
+//     console.log("Keep working!!!");
+// }
+// else {
+//     console.log("Thank you for writing your age");
+// }
+//now I understnad why it is called DOM in HTML
+const title = document.getElementById("title");
+// title.autofocus = true;
+title.innerText = "Got you!";
+console.log(title);
