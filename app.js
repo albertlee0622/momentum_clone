@@ -139,9 +139,20 @@ better than array because the array doesn't give much meaning to each element
 //     console.log("Thank you for writing your age");
 // }
 //now I understnad why it is called DOM in HTML
-const title = document.querySelectorAll(".text-class h1");
+const title = document.querySelector("div.text-class h1:first-child");
 // console.log(title);
 // // title.autofocus = true;
 // // title[0].innerText= "Got you!";
-// console.log(title);
-console.log(title);
+
+//listen for event: event listener
+//want to know about a particular event
+
+function handleTitleClick() {
+    console.log("title was clicked!")
+}
+
+//when click event happens execute handleTitleClick
+title.addEventListener("click", handleTitleClick);
+
+title.style.color = "blue";
+
