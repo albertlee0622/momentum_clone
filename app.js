@@ -142,4 +142,4 @@ better than array because the array doesn't give much meaning to each element
 const title = document.getElementById("title");
 // title.autofocus = true;
 title.innerText = "Got you!";
-console.log(title);
+// console.log(title);
