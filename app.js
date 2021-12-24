@@ -147,44 +147,68 @@ const h1 = document.querySelector("div.text-class h1");
 //listen for event: event listener
 //want to know about a particular event
 
-function handleTitleClick() {
-    // console.log("title was clicked!")
-    h1.style.color = "blue";
-}
+// function handleTitleClick() {
+//     // console.log("title was clicked!")
+//     h1.style.color = "blue";
+// }
 
-function handleMouseEnter() {
-    // console.log("mouse is here");
-    h1.innerText = "mouse";
-}
+// function handleMouseEnter() {
+//     // console.log("mouse is here");
+//     h1.innerText = "mouse";
+// }
 
-function handleMouseLeave() {
-    // console.log("mouse is gone");
-    h1.innerText = "mouse is gone";
-}
+// function handleMouseLeave() {
+//     // console.log("mouse is gone");
+//     h1.innerText = "mouse is gone";
+// }
 
-function handleWindowResize() {
-    document.body.style.backgroundColor = "tomato";
-}
+// function handleWindowResize() {
+//     document.body.style.backgroundColor = "tomato";
+// }
 
-function handleWindowCopy() {
-    alert("copied!");
-}
+// function handleWindowCopy() {
+//     alert("copied!");
+// }
 
-function handlewWindowOffline() {
-    console.log("SOS on WIFI");
-}
+// function handlewWindowOffline() {
+//     console.log("SOS on WIFI");
+// }
 
-function handlewWindowOnline() {
-    console.log("WIFI Connected");
-}
+// function handlewWindowOnline() {
+//     console.log("WIFI Connected");
+// }
 
-//when click event happens execute handleTitleClick
-// title.addEventListener("click", handleTitleClick);
+// //when click event happens execute handleTitleClick
+// // title.addEventListener("click", handleTitleClick);
 console.dir(h1);
-h1.onclick = handleTitleClick; 
-h1.addEventListener("mouseenter", handleMouseEnter); //mouseenter
-h1.addEventListener("mouseleave", handleMouseLeave); //mouseleave
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
-window.addEventListener("offline", handlewWindowOffline);
-window.addEventListener("online", handlewWindowOnline);
+// h1.onclick = handleTitleClick; 
+// h1.addEventListener("mouseenter", handleMouseEnter); //mouseenter
+// h1.addEventListener("mouseleave", handleMouseLeave); //mouseleave
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+// window.addEventListener("offline", handlewWindowOffline);
+// window.addEventListener("online", handlewWindowOnline);
+
+function handleTitleClick() {
+    // const currentColor = h1.style.color; 
+    // let newColor;
+    // if(currentColor === "blue") {
+    //     newColor = "tomato";
+    // }
+    // else {
+    //     newColor = "blue";
+    // }
+    // h1.style.color = newColor;
+
+    //style changes can be done better in CSS
+    const activeClass = "clicked";
+    // if(h1.classList.contains(activeClass)) {
+    //     h1.classList.remove(activeClass);
+    // }
+    // else {
+    //     h1.classList.add(activeClass);
+    // }
+    h1.classList.toggle(activeClass);
+}
+//style changes can be done better in CSS
+h1.addEventListener("click", handleTitleClick);
