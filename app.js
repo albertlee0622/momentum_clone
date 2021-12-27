@@ -1,10 +1,13 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput  = document.querySelector("#login-form input");
-const loginButton  = document.querySelector("#login-form button");
+const link = document.querySelector("a");
+// const loginButton  = document.querySelector("#login-form button");
 
-function onLoginBtnClick() {
+function onLoginSubmit(event) {
     const username = loginInput.value;
-    const limit = 15;
+    event.preventDefault();
+    console.log(username);
+    // const limit = 15;
     // if(username === "") {
     //     alert("Please write your name");
     // }
@@ -14,6 +17,15 @@ function onLoginBtnClick() {
     // }
 }
 
-loginButton.addEventListener("click", onLoginBtnClick);
+function onLinkClick(event) {
+    event.preventDefault();
+    console.log(event);
+}
+
+// loginButton.addEventListener("click", onLoginBtnClick);
 //4.1 3:45
-//we want to stop the form submitted after carriage return because it refreshes the entire webpage(slow) 
+//we want to stop the form submitted after carriage return because it refreshes the entire webpage(slow)
+//get the input value when submitted
+loginForm.addEventListener("submit", onLoginSubmit);
+link.addEventListener("click", onLinkClick);
+
