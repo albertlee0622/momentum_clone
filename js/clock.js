@@ -2,10 +2,7 @@ const clock = document.querySelector("h2#clock");
 console.dir(clock);
 // interval: something that happens every k second
 function addLeadingZero(number) {
-    if(number < 10) {
-        number = '0' + number
-    }
-    return number
+    return String(number).padStart(2, '0');
 }
 function updateTime() {
     const date = new Date();

@@ -7,7 +7,7 @@ const USERNAME_KEY = "username";
 
 // const loginButton  = document.querySelector("#login-form button");
 function displayGreeting(username) {
-    greeting.innerText = `Hello ${username}`;
+    greeting.innerText = `Hello ${username}!`;
     greeting.classList.remove("hidden");
 }
 
