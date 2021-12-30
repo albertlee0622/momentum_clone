@@ -1,9 +1,11 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+const todos = []
 
 function deleteTodo(event) {
-    console.dir(event);
+    const li = event.target.parentElement;
+    li.remove();
 }
 
 function handleButtonClick(event) {
@@ -24,6 +26,10 @@ function addTodo(newTodo) {
     button.innerText = "❌";
     li.appendChild(button);
     toDoList.addEventListener("click", handleButtonClick);
+
+    //save todo in local storage
+    todos.push(newTodo)
+    localStorage.setItem("todos", todos);
 }
 
 function handleToDoSubmit(event) {
