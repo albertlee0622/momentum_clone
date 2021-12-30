@@ -14,3 +14,4 @@ bgImage.src = images[index];
 // bgImage.style.width = '100%';
 // console.dir(bgImage);
 document.body.appendChild(bgImage);
+// console.dir(document);
