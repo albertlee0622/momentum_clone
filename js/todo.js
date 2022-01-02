@@ -2,18 +2,9 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 let todoStr = localStorage.getItem("todos");
-let todoArray = [];
-const todos = [];
 
-function updateTodoArray() {
-    todoStr = localStorage.getItem("todos");
-    if(todoStr !== null) {
-        todoArray = todoStr.split(',');
-    }
-    else {
-        todoArray = [];
-    }
-}
+const TODOS_KEY = "todos";
+const todos = [];
 
 function displayTodo(newTodo) {
     //add button for the li
@@ -27,21 +18,21 @@ function displayTodo(newTodo) {
     li.appendChild(button);
 }
 
-function deleteTodo(event) {
-    const li = event.target.parentElement;
-    li.remove();
-    const todo = li.querySelector("span");
-    updateTodoArray();
-    for(let i = 0; i < todoArray.length; i++) {
-        if(todoArray[i] == todo.innerText) {
-            console.log(todoArray)
-            todoArray.splice(i, 1);
-            console.log(todoArray);
-            localStorage.removeItem("todos");
-            localStorage.setItem("todos", todoArray);
-        }
-    }
-}
+// function deleteTodo(event) {
+//     const li = event.target.parentElement;
+//     li.remove();
+//     const todo = li.querySelector("span");
+//     updateTodoArray();
+//     for(let i = 0; i < todoArray.length; i++) {
+//         if(todoArray[i] == todo.innerText) {
+//             console.log(todoArray)
+//             todoArray.splice(i, 1);
+//             console.log(todoArray);
+//             localStorage.removeItem("todos");
+//             localStorage.setItem("todos", todoArray);
+//         }
+//     }
+// }
 
 function handleButtonClick(event) {
     // event.preventDefault();
@@ -50,7 +41,7 @@ function handleButtonClick(event) {
 
 function saveTodo() {
     //save todo in local storage using JSON.stringify
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
 function handleToDoSubmit(event) {
@@ -72,3 +63,14 @@ toDoList.addEventListener("click", handleButtonClick);
 //I need to find the right data structure to save todos in local storage
 //JSON.stringify();
 //now how to retrieve array from stringified data in local storage
+const savedTodos = localStorage.getItem(TODOS_KEY);
+
+function displaySavedTodos() {
+    if(savedTodos !== null) {
+        const todoArray = JSON.parse(savedTodos);
+        console.log(todoArray);
+        todoArray.forEach(displayTodo);
+    }
+}
+
+displaySavedTodos();
