@@ -30,11 +30,13 @@ function displaySavedTodos() {
 function deleteTodo(event) {
 
     const li = event.target.parentElement;
-    console.log(typeof li.id);
+    const length = todos.length;
     todos = todos.filter((todo) => todo.id !== parseInt(li.id));
-    console.log(todos);
-    li.remove();
-    localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
+    // console.log(todos);
+    if(todos.length < length) {
+        li.remove();
+        localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
+    }
 }
 
 function handleButtonClick(event) {
@@ -71,4 +73,3 @@ toDoList.addEventListener("click", handleButtonClick);
 //now how to retrieve array from stringified data in local storage
 
 displaySavedTodos();
-
